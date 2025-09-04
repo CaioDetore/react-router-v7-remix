@@ -9,7 +9,7 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   return (
-    <h1 className="text-6xl">
+    <h1 className="text-6xl h-[100vh] w-[100vw] flex  justify-center">
       RocketSeat
     </h1>
   );
