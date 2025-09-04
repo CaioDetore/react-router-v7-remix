@@ -1,6 +1,7 @@
-import type { Route } from "./+types/loaders-demo";
+import { Link, Outlet } from "react-router";
+import type { Route } from "./+types/loaders";
 
-type Brewery = {
+export type Brewery = {
   id: string;
   name: string;
   brewery_type: string;
@@ -34,9 +35,25 @@ export default function ({ loaderData }: Route.ComponentProps) {
     <>
       <h2>{loaderData.title}</h2>
 
-      {loaderData.breweries.map((brewery) => (
-        <li key={brewery.id}>{brewery.name}</li>
-      ))}
+      <section className="grid grid-cols-2 gap-6 p-5">
+        <ul>
+          {loaderData.breweries.map((brewery, idx) => (
+            <li
+              key={brewery.id}
+              className={idx % 2 === 0 ? "p-5 bg-slate-800 rounded" : "p-5 bg-slate-900 rounded"}
+            >
+              <Link to={`/loaders/${brewery.id}`}>{brewery.name}</Link>
+            </li>
+          ))}
+        </ul>
+
+        <div className="bg-slate-700 p-5 rounded-md">
+
+          <Outlet />
+        </div>
+      </section>
+
+
     </>
   );
 }
