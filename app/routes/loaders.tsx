@@ -42,7 +42,7 @@ export default function ({ loaderData }: Route.ComponentProps) {
               key={brewery.id}
               className={idx % 2 === 0 ? "p-5 bg-slate-800 rounded" : "p-5 bg-slate-900 rounded"}
             >
-              <Link to={`/loaders/${brewery.id}`}>{brewery.name}</Link>
+              <Link prefetch="intent" to={`/loaders/${brewery.id}`}>{brewery.name}</Link>
             </li>
           ))}
         </ul>
