@@ -26,6 +26,8 @@ export async function action({ request }: Route.ActionArgs) {
 }
 
 export default function ({ actionData }: Route.ComponentProps) {
+  // O fetcher é um hook do React Router que permite enviar requisições (como formulários ou fetches) de forma isolada, sem afetar o estado global de navegação da página.
+  // Ele é útil para lidar com formulários ou interações que não precisam recarregar ou navegar para outra rota.
   const fetcher = useFetcher()
 
   const busy = fetcher.state !== 'idle'

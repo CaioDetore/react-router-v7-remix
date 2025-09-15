@@ -4,7 +4,7 @@ export default [
   layout(
     "layout/main.tsx", [
     index("routes/home.tsx"),
-    route("loaders", "routes/loaders.tsx", [
+    route("cervejarias", "routes/cervejarias.tsx", [
       route(":id", "routes/cervejaria.tsx"),
     ]),
   ]

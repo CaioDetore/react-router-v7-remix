@@ -9,7 +9,7 @@ export default function () {
         </li>
 
         <li>
-          <NavLink to="/loaders">Cervejarias</NavLink>
+          <NavLink to="/cervejarias">Cervejarias</NavLink>
         </li>
       </ul>
 
